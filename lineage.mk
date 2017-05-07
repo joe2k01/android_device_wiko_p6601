@@ -1,10 +1,7 @@
-## Specify phone tech before including full_phone
-#$(call inherit-product, vendor/cm/config/gsm.mk)
-
 # Release name
 PRODUCT_RELEASE_NAME := p6601
 
-# Inherit some common CM stuff.
+# Inherit some common cm stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -18,7 +15,7 @@ TARGET_SCREEN_WIDTH := 720
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := p6601
-PRODUCT_NAME := cm_p6601
+PRODUCT_NAME := lineage_p6601
 PRODUCT_BRAND := blu
 PRODUCT_MODEL := p6601
 PRODUCT_MANUFACTURER := blu

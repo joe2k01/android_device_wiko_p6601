@@ -3,22 +3,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-# Off ninja
-USE_NINJA=false
-
 $(call inherit-product-if-exists, vendor/blu/p6601/p6601-vendor.mk)
+
+USE_NINJA := false
 
 DEVICE_PACKAGE_OVERLAYS += device/blu/p6601/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/blu/p6601/prebuilt/Image.gz-dtb
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
 
 #TARGET_OTA_ASSERT_DEVICE := p6601
 
@@ -96,8 +89,6 @@ PRODUCT_PACKAGES += blupshelper
 
 PRODUCT_PACKAGES += power.mt6735
 
-
-
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -134,16 +125,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 #$(call inherit-product, build/target/product/aosp_arm64.mk)
 
-#PRODUCT_NAME := cm_p6601
-#PRODUCT_DEVICE := p6601
-#PRODUCT_BRAND := CyaniogenMod
-#PRODUCT_MODEL := CyaniogenMod on blu p6601
-
 # These additionals go to /default.prop
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0 \
-ro.allow.mock.location=1 \
-ro.debuggable=1 \
-ro.adb.secure=0 \
 persist.service.acm.enable=0 \
 persist.sys.usb.config=mtp \
 ro.mount.fs=EXT4 \
@@ -159,12 +142,6 @@ ril.current.share_modem=2 \
 ro.mtk_gps_support=1 \
 ro.mtk_agps_app=1 \
 persist.debug.xlog.enable=1 \
-
-# These additionals go to /system/build.prop
-ADDITIONAL_BUILD_PROPERTIES += \
-cm.updater.type=plain \
-cm.updater.uri=https://localhost/decker/update-site/master/updates-14.1.json \
-
 
 # Removed for now
 #ro.persist.partition.support=no \
