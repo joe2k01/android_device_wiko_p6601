@@ -5,8 +5,6 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/blu/p6601/p6601-vendor.mk)
 
-USE_NINJA := false
-
 DEVICE_PACKAGE_OVERLAYS += device/blu/p6601/overlay
 
 # Device uses high-density artwork where available
