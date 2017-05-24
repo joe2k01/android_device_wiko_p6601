@@ -1,0 +1,34 @@
+commit 0e947e05a32efb630b434a91f7c1613ff57e3353
+Author: DeckerSU <support@decker.su>
+Date:   Wed May 24 12:28:07 2017 -0700
+
+    Add missing MediaBufferGroup::acquire_buffer symbols
+    
+    Change-Id: I4c5760f51f0e97d47e0fb93ffd42815d16fa9d1a
+
+diff --git a/media/libstagefright/foundation/MediaBufferGroup.cpp b/media/libstagefright/foundation/MediaBufferGroup.cpp
+index 8e4d0641c..51607fd93 100644
+--- a/media/libstagefright/foundation/MediaBufferGroup.cpp
++++ b/media/libstagefright/foundation/MediaBufferGroup.cpp
+@@ -126,6 +126,21 @@ void MediaBufferGroup::add_buffer(MediaBuffer *buffer) {
+     mBuffers.emplace_back(buffer);
+ }
+ 
++// stagefright: add mising MediaBufferGroup::acquire_buffer symbol - https://review.cyanogenmod.org/#/c/77502/
++extern "C" status_t _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferE(
++                    MediaBufferGroup* group, MediaBuffer **out) {
++    ALOGD("[Decker] _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferE");
++    return group->acquire_buffer(out, false, 0);
++}
++
++// just another method fix
++extern "C" status_t _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb(
++                    MediaBufferGroup* group, MediaBuffer **out, bool nonBlocking) {
++    ALOGD("[Decker] _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb");
++    return group->acquire_buffer(out, nonBlocking, 0);
++}
++
++
+ bool MediaBufferGroup::has_buffers() {
+     if (mBuffers.size() < mGrowthLimit) {
+         return true; // We can add more buffers internally.
