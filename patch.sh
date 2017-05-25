@@ -31,6 +31,7 @@ popd
 
 pushd $TREE/frameworks/av
 patch $PATCH_ARGS < $PATCHES/frameworks_av/mtk-audio-fix.patch
+patch $PATCH_ARGS < $PATCHES/frameworks_av/Disable-usage-of-get_capture_position.patch
 patch $PATCH_ARGS < $PATCHES/frameworks_av/fix-access-wvm-to-ReadOptions.patch
 patch $PATCH_ARGS < $PATCHES/frameworks_av/Add-missing-MediaBufferGroup__acquire_buffer_symbols.patch
 popd
