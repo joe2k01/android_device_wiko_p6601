@@ -111,6 +111,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # Recovery 
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_NO_MISC_PARTITION := true
 #TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/init.mt6753.rc
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/fstab.mt6735
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
