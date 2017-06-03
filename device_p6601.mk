@@ -95,6 +95,12 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.mt6735 \
+    libcurl \
+    YGPS
+
 PRODUCT_COPY_FILES += \
     device/blu/p6601/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
