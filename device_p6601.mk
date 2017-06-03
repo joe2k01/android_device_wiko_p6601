@@ -327,10 +327,3 @@ persist.debug.xlog.enable=1 \
 # 
 PRODUCT_PACKAGES += \
     libshims_wvm
-
-# mrdump related
-PRODUCT_PACKAGES += \
-    libmrdump \
-    mrdump_tool \
-    Camu
-

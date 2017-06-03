@@ -300,8 +300,6 @@ lib/libcam.iopipe_FrmB.so
 bin/bin/ccci_rpcd
 lib/libterservice.so
 
-#lib/libmrdump.so
-
 bin/update_verifier
 bin/mobile_log_d
 
