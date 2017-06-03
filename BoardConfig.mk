@@ -102,8 +102,8 @@ endif
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET) --board $(BOARD_REL_NAME)
 
 # Mediatek flags
-CONFIG_MTK_PLATFORM := $(TARGET_BOARD_PLATFORM) # used in kernel src
-BOARD_USES_MTK_HARDWARE := true # see vendor/cm/buuild/core/mtk_target.mk
+CONFIG_MTK_PLATFORM := $(TARGET_BOARD_PLATFORM)
+BOARD_USES_MTK_HARDWARE := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
