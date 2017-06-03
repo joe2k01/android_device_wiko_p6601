@@ -138,5 +138,8 @@ BOARD_HAS_MTK_HARDWARE := true
 #$(info *** Mediatek Platform Used ***)
 #endif
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 #system.prop
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
