@@ -101,6 +101,11 @@ PRODUCT_PACKAGES += \
     libcurl \
     YGPS
 
+# FMRadio
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
+
 PRODUCT_COPY_FILES += \
     device/blu/p6601/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 
