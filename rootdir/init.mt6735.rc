@@ -522,6 +522,9 @@ on post-fs-data
     chmod 0660 /dev/sw_sync
     chown system graphics /dev/sw_sync
 
+    # CyanogenMod Live Display Tunable
+    chmod 0666 /sys/devices/platform/mtk_disp_mgr.0/rgb
+
     # EM baseband file
     chown root diag /system/bin/baseband_regdump
     chmod 4750 /system/bin/baseband_regdump
