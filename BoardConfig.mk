@@ -146,5 +146,8 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# CyanogenMod Hardware Hooks
+BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/cmhw/
+
 #system.prop
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
