@@ -86,5 +86,9 @@ ro.mtk_gemini_support=1
 persist.radio.gemini_support=1
 ril.current.share_modem=2
 
+# Camera
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 # GPS
 persist.mtk.wcn.combo.chipid=-1
