@@ -23,6 +23,7 @@ esac
 
 pushd $TREE/system/core
 patch $PATCH_ARGS < $PATCHES/system_core/remove-CAP_SYS_NICE-from-surfaceflinger-and-cln-logger-service.patch
+patch $PATCH_ARGS < $PATCHES/system_core/Add-fixes-for-MTK-devices.patch
 popd
 
 pushd $TREE/bionic
