@@ -53,7 +53,7 @@ do
 				continue
 			else
 				# Can this patch be cleanly reversed?
-				patch -p1 -NR --dry-run --silent < $patch 2> /dev/null
+				patch -p1 -NR --dry-run --silent < $patch
 				if [ $? -eq 0 ]
 				then
 					patch -p1 -NR < $patch
@@ -72,7 +72,7 @@ do
 				continue
 			else
 				# Can this patch be cleanly applied?
-				patch -p1 -N --dry-run --silent < $patch 2>/dev/null
+				patch -p1 -N --dry-run --silent < $patch
 				if [ $? -eq 0 ]
 				then
 					patch -p1 -N < $patch
