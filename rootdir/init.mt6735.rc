@@ -14,6 +14,10 @@ import init.trustonic.rc
 import init.modem.rc
 import init.target.rc
 
+on early-init
+    # Turn off backlight on blank
+    write /sys/class/leds/lcd-backlight/trigger "backlight"
+
 on init
     # export LD_SHIM_LIBS "/system/vendor/lib/libwvm.so|libshims_wvm.so:/system/lib/hw/camera.mt6737m.so|libshims_camera.so:/system/lib/libcam.client.so|libshims_camera.so:/system/lib/libcam_utils.so|libshims_camera.so:/system/lib/libgui.so|libshims_camera.so:/system/lib/libmtk_mmutils.so|libshims_camera.so"
     export LD_SHIM_LIBS /system/vendor/lib/libwvm.so|libshims_wvm.so
@@ -1262,6 +1266,12 @@ service GoogleOtaAgent /system/bin/GoogleOtaBinder
     class main
     user system
     group system
+
+# Charger mode
+service charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
 
 service mdlogger /system/bin/mdlogger
     class main
