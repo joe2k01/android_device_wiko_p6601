@@ -46,18 +46,7 @@
          backlight values for LUX levels between these control points.
 
          Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>2</item>
-        <item>3</item>
-        <item>5</item>
-        <item>10</item>
-        <item>20</item>
-        <item>25</item>
-        <item>40</item>
-        <item>50</item>
-        <item>60</item>
-        <item>85</item>
-        <item>110</item>
+   <integer-array name="config_autoBrightnessLevels">
         <item>128</item>
         <item>256</item>
         <item>384</item>
@@ -83,29 +72,18 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>67</item>
-        <item>73</item>
-        <item>75</item>
-        <item>75</item>
-        <item>80</item>
-        <item>85</item>
-        <item>90</item>
-        <item>95</item>
-        <item>100</item>
-        <item>100</item>
-        <item>100</item>
-        <item>100</item>
-        <item>100</item>
+        <item>8</item>
+        <item>64</item>
+        <item>98</item>
+        <item>104</item>
         <item>110</item>
-        <item>110</item>
-        <item>115</item>
+        <item>116</item>
+        <item>122</item>
         <item>128</item>
-        <item>139</item>
-        <item>150</item>
-        <item>170</item>
-        <item>180</item>
-        <item>200</item>
-        <item>250</item>
+        <item>134</item>
+        <item>182</item>
+        <item>255</item>
+        <item>255</item>
         <item>255</item>
         <item>255</item>
         <item>255</item>
