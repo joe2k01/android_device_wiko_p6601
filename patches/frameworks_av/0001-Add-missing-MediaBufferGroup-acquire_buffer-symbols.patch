@@ -1,13 +1,15 @@
-commit 0e947e05a32efb630b434a91f7c1613ff57e3353
-Author: DeckerSU <support@decker.su>
-Date:   Wed May 24 12:28:07 2017 -0700
+From 3c430ba5e6d499826e7a0124069b371559dffbbb Mon Sep 17 00:00:00 2001
+From: DeckerSU <support@decker.su>
+Date: Tue, 19 Sep 2017 17:39:35 +0800
+Subject: [PATCH 1/4] Add missing MediaBufferGroup::acquire_buffer symbols
 
-    Add missing MediaBufferGroup::acquire_buffer symbols
-    
-    Change-Id: I4c5760f51f0e97d47e0fb93ffd42815d16fa9d1a
+Change-Id: I4c5760f51f0e97d47e0fb93ffd42815d16fa9d1a
+---
+ media/libstagefright/foundation/MediaBufferGroup.cpp | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
 diff --git a/media/libstagefright/foundation/MediaBufferGroup.cpp b/media/libstagefright/foundation/MediaBufferGroup.cpp
-index 8e4d0641c..51607fd93 100644
+index 8e4d064..51607fd 100644
 --- a/media/libstagefright/foundation/MediaBufferGroup.cpp
 +++ b/media/libstagefright/foundation/MediaBufferGroup.cpp
 @@ -126,6 +126,21 @@ void MediaBufferGroup::add_buffer(MediaBuffer *buffer) {
@@ -32,3 +34,6 @@ index 8e4d0641c..51607fd93 100644
  bool MediaBufferGroup::has_buffers() {
      if (mBuffers.size() < mGrowthLimit) {
          return true; // We can add more buffers internally.
+-- 
+2.14.1
+
