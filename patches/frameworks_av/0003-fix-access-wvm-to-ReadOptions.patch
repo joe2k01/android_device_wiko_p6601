@@ -1,7 +1,7 @@
-From e6dcb84ef13f80f11857d0947519db009d178c36 Mon Sep 17 00:00:00 2001
+From 6eda92bc87b997ae5f23a443c877840e74c2f303 Mon Sep 17 00:00:00 2001
 From: DeckerSU <support@decker.su>
 Date: Mon, 12 Dec 2016 21:01:33 +0200
-Subject: [PATCH] fix access wvm to ReadOptions
+Subject: [PATCH 3/4] fix access wvm to ReadOptions
 
 Change-Id: I0e8b6bd079de3302b8929a3afb97b8c8d5446f9d
 ---
@@ -50,5 +50,5 @@ index a17757a..b14f598 100644
 +}
 +
 -- 
-2.7.4
+2.14.1
 

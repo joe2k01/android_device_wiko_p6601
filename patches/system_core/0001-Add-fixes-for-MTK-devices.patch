@@ -1,7 +1,7 @@
-From 41abbb932107647fd957e66085118d4d7432eadb Mon Sep 17 00:00:00 2001
+From c03b32c0e4f98179fa73e00ed25e1680462d1b7b Mon Sep 17 00:00:00 2001
 From: Zhaofeng Li <hello@zhaofeng.li>
 Date: Tue, 16 May 2017 00:34:51 -0700
-Subject: [PATCH] Add fixes for MTK devices
+Subject: [PATCH 1/2] Add fixes for MTK devices
 
 Change-Id: I8c2d0061d1a0e12bd8907b9e4a46afde87e2f02e
 ---
@@ -9,7 +9,7 @@ Change-Id: I8c2d0061d1a0e12bd8907b9e4a46afde87e2f02e
  1 file changed, 38 insertions(+), 3 deletions(-)
 
 diff --git a/liblog/logger_write.c b/liblog/logger_write.c
-index c7b5a8415..a5078520b 100644
+index c7b5a84..a507852 100644
 --- a/liblog/logger_write.c
 +++ b/liblog/logger_write.c
 @@ -31,10 +31,13 @@
@@ -82,5 +82,5 @@ index c7b5a8415..a5078520b 100644
 +}
 +#endif
 -- 
-2.11.0
+2.14.1
 

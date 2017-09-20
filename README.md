@@ -5,7 +5,7 @@ Device tree of BLU R1 HD (p6601), for building LineageOS 14.1.
 
 # Building
 
-Before building, apply necessary patches by running `./patch.sh` included in the device tree. Don't worry, you can invoke the script with `-R` after building to reverse the patches, keeping your tree clean for other devices.
+Before building, apply necessary patches by running `./apply.sh` included in the device tree. Don't worry, you can invoke the script with `-R` after building to reverse the patches, keeping your tree clean for other devices.
 
 # Facts
 

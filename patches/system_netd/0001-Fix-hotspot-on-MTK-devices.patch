@@ -1,0 +1,63 @@
+From fe77acf3e38517ea60e8d525ad1ba6f1760eae1d Mon Sep 17 00:00:00 2001
+From: danielhk <daniel.p6800@gmail.com>
+Date: Tue, 19 Sep 2017 17:32:36 +0800
+Subject: [PATCH] Fix hotspot on MTK devices
+
+Change-Id: Id82aace19587730fb7937c3ac5a68aad74efafb7
+---
+ server/NatController.cpp    |  4 ++--
+ server/SoftapController.cpp | 11 ++++++++++-
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+diff --git a/server/NatController.cpp b/server/NatController.cpp
+index cda8f5f..501d8fc 100644
+--- a/server/NatController.cpp
++++ b/server/NatController.cpp
+@@ -375,12 +375,12 @@ int NatController::setForwardRules(bool add, const char *intIface, const char *e
+         rc = -1;
+         goto err_return;
+     }
+-
++#ifndef TARGET_DISABLE_IPV6_RPFILTER
+     if (runCmd(ARRAY_SIZE(cmd4), cmd4) && add) {
+         rc = -1;
+         goto err_rpfilter;
+     }
+-
++#endif
+     if (setTetherCountingRules(add, intIface, extIface) && add) {
+         rc = -1;
+         goto err_return;
+diff --git a/server/SoftapController.cpp b/server/SoftapController.cpp
+index 4a7c8d7..e1d4241 100755
+--- a/server/SoftapController.cpp
++++ b/server/SoftapController.cpp
+@@ -53,7 +53,11 @@ using android::base::WriteStringToFile;
+ #include "wpa_ctrl.h"
+ #endif
+ 
++#ifdef MTK_HARDWARE
++std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/ap0"));
++#else
+ std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/wlan0"));
++#endif
+ #ifdef LIBWPA_CLIENT_EXISTS
+ static const char HOSTAPD_DHCP_DIR[]    = "/data/misc/dhcp";
+ #endif
+@@ -289,7 +293,12 @@ int SoftapController::setSoftap(int argc, char *argv[]) {
+             "hw_mode=%c\n"
+             "ignore_broadcast_ssid=%d\n"
+             "wowlan_triggers=any\n",
+-            argv[2], argv[3], channel, (channel <= 14) ? 'g' : 'a', hidden));
++#ifdef MTK_HARDWARE
++	    "ap0",
++#else
++            argv[2],
++#endif
++	    argv[3], channel, (channel <= 14) ? 'g' : 'a', hidden));
+ 
+     std::string fbuf;
+     if (argc > 7) {
+-- 
+2.14.1
+

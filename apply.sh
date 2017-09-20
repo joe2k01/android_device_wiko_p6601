@@ -6,6 +6,7 @@ PATCHES=$DEVICE/patches
 PROJECTS=(
 	frameworks/av
 	system/core
+	system/netd
 	bionic
 )
 

@@ -1,7 +1,7 @@
-From 2fe11bf9c147db8e11c73d62bc6fdb02a13d8e55 Mon Sep 17 00:00:00 2001
+From b62ca62503519962e619f8cd00eee6f3cbfe8f48 Mon Sep 17 00:00:00 2001
 From: olegsvs <oleg.texet@gmail.com>
 Date: Thu, 8 Dec 2016 11:01:32 +0000
-Subject: [PATCH] remove-CAP_SYS_NICE-from-surfaceflinger and cln logger
+Subject: [PATCH 2/2] remove-CAP_SYS_NICE-from-surfaceflinger and cln logger
  service
 
 Change-Id: Ib681fcec95953c88b934d7c4247d0207740a6fa1
@@ -25,10 +25,10 @@ index 68cfcbe..f192386 100644
      { 00750, AID_ROOT,      AID_ROOT,      0, "system/bin/uncrypt" },
      { 00750, AID_ROOT,      AID_ROOT,      0, "system/bin/install-recovery.sh" },
 diff --git a/liblog/logger_write.c b/liblog/logger_write.c
-index c7b5a84..e8a3617 100644
+index a507852..1d78332 100644
 --- a/liblog/logger_write.c
 +++ b/liblog/logger_write.c
-@@ -393,6 +393,61 @@ LIBLOG_ABI_PUBLIC int __android_log_buf_write(int bufID, int prio,
+@@ -396,6 +396,61 @@ LIBLOG_ABI_PUBLIC int __android_log_buf_write(int bufID, int prio,
  
      if (!tag)
          tag = "";
@@ -91,5 +91,5 @@ index c7b5a84..e8a3617 100644
      /* XXX: This needs to go! */
      if ((bufID != LOG_ID_RADIO) &&
 -- 
-1.9.1
+2.14.1
 
