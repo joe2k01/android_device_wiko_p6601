@@ -33,7 +33,6 @@ PRODUCT_COPY_FILES += \
     device/blu/p6601/etc/media_codecs.xml:system/etc/media_codecs.xml \
     device/blu/p6601/etc/init/audioserver.rc:system/etc/init/audioserver.rc \
     device/blu/p6601/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
-    device/blu/p6601/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
     device/blu/p6601/etc/init/rild.rc:system/etc/init/rild.rc \
     device/blu/p6601/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
