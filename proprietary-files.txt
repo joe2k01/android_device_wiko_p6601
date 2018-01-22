@@ -150,7 +150,6 @@ lib/hw/vibrator.default.so
 lib/hw/gralloc.mt6735.so
 lib/hw/sensors.mt6735.so
 lib/hw/local_time.default.so
-lib/hw/mmsdk_default.so
 lib/hw/power.default.so
 lib/libcam_hwutils.so
 lib/libcam3_pipeline.so
@@ -266,7 +265,6 @@ lib/libterservice.so
 
 bin/mobile_log_d
 
-bin/update_verifier
 bin/mobile_log_d
 bin/netdiag
 bin/pq
