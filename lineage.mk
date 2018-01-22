@@ -5,7 +5,7 @@ PRODUCT_RELEASE_NAME := p6601
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/blu/p6601/device_p6601.mk)
+$(call inherit-product, device/wiko/p6601/device_p6601.mk)
 
 # Configure dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
@@ -16,6 +16,6 @@ TARGET_SCREEN_WIDTH := 720
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_p6601
 PRODUCT_DEVICE := p6601
-PRODUCT_BRAND := BLU
-PRODUCT_MODEL := R1 HD
-PRODUCT_MANUFACTURER := BLU
+PRODUCT_BRAND := WIKO
+PRODUCT_MODEL := U Feel
+PRODUCT_MANUFACTURER := TINNO

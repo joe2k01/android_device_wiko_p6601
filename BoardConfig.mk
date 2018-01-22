@@ -1,5 +1,5 @@
-DEVICE_PATH := device/blu/p6601
-VENDOR_PATH := vendor/blu/p6601
+DEVICE_PATH := device/wiko/p6601
+VENDOR_PATH := vendor/wiko/p6601
 
 USE_CAMERA_STUB := true
 
@@ -83,8 +83,7 @@ BOARD_KERNEL_BASE = 0x40000000
 BOARD_RAMDISK_OFFSET = 0x04000000
 BOARD_KERNEL_OFFSET = 0x00008000
 BOARD_TAGS_OFFSET = 0x0e000000
-BOARD_REL_NAME = BLU_R0010UU_V6.
-TARGET_KERNEL_SOURCE := kernel/blu/p6601
+TARGET_KERNEL_SOURCE := kernel/wiko/p6601
 TARGET_KERNEL_CONFIG := p6601_defconfig
 
 ifeq ($(FORCE_32_BIT),true)
@@ -117,31 +116,12 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Recovery 
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
-#TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/init.mt6753.rc
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/fstab.mt6735
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
 
 # Test (for using modified framework)
 BOARD_USES_LEGACY_MTK_AV_BLOB := true
 BOARD_HAS_MTK_HARDWARE := true
-
-#TARGET_USES_MEDIA_EXTENSIONS := false
-#TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-
-# Mediatek 
-#ifeq ($(BOARD_HAS_MTK_HARDWARE),true)
-#MTK_GLOBAL_C_INCLUDES:=
-#MTK_GLOBAL_CFLAGS:=
-#MTK_GLOBAL_CONLYFLAGS:=
-#MTK_GLOBAL_CPPFLAGS:=
-#MTK_GLOBAL_LDFLAGS:=
-
-#MTK_GLOBAL_CFLAGS += -DMTK_AOSP_ENHANCEMENT
-#MTK_PATH_SOURCE := vendor/mediatek/proprietary
-#MTK_ROOT := vendor/mediatek/proprietary
-
-#$(info *** Mediatek Platform Used ***)
-#endif
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true

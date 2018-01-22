@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DEVICE=p6601
-VENDOR=blu
+VENDOR=wiko
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk

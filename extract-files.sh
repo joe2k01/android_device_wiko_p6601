@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export DEVICE=p6601
-export VENDOR=blu
+export VENDOR=wiko
 
 if [ $# -eq 0 ]; then
   SRC=adb
