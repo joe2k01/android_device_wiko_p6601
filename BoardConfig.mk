@@ -98,7 +98,7 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 TARGET_USES_64_BIT_BINDER := true
 endif
 
-BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET) --board $(BOARD_REL_NAME)
+BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
 # Mediatek flags
 CONFIG_MTK_PLATFORM := $(TARGET_BOARD_PLATFORM)
